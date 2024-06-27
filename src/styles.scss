@@ -1,0 +1,241 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #e8ecf3;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: small;
+  color: #5d5d5f;
+}
+
+.contenedor {
+  max-width: 1200px;
+  width:100%;
+  height:100%;
+  margin: 0 auto;
+}
+
+.contenedorFondo {
+  background:white;
+}
+
+.margenTabla {
+  margin: 0px 20px 40px 20px;
+}
+
+.posicionIzq{
+  float:left;
+}
+
+.posicionDer{
+  float: right;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+th {
+  background-color: #e8ecf3;
+}
+
+th, #barProccess, tbody>tr>td  {
+  border-bottom: 1px solid #dee2e6;
+}
+
+#infoIcon, th, tbody>tr>td  {
+  text-align: left;
+  padding-left: 3%;
+  padding-top: 0.8%;
+  padding-bottom: 0.8%;
+}
+
+.form-control{
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+}
+
+input[type=text], select, input[type=date] {
+  padding: 4px 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.customButton:hover {
+  background-color: #b39b00 !important;
+  border-color: #b39b00;
+  border-color: #b39b00 !important;
+}
+
+.customButton {
+  background-color: #fd0 !important;
+  border-color: #fd0 !important;
+  font-family: Prelo-SemiBold,sans-serif!important;
+}
+
+.btn {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+  display: inline-block;
+  color: #4a4a4a;
+  border: 1px solid transparent;
+  height: 35px;
+  border-radius: 4px;
+  transition: color .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out,box-shadow .2s ease-in-out;
+}
+
+[type=button], [type=reset], [type=submit], button {
+  -webkit-appearance: button;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.tooltip {
+  display: inline;
+}
+
+.tooltip span {
+  text-decoration: none;
+  transform: translate(-50%, -100%) scale(.5);
+  position: absolute;
+  background-color: #4a4a4a;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: center;
+  box-shadow: 0 0 4px 2px #4a4a4a;
+  width: max-content;
+  max-width: 200px;
+  top: 0;
+  left: 50%;
+  margin-top: -18px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.tooltip:hover {
+  position: relative;
+}
+
+.tooltip:hover span {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -100%) scale(1);
+}
+
+.tooltip:hover span::after {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: solid transparent;
+  content: '';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-top: 8px solid #4a4a4a;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-width: 10px;
+}
+
+#infoIcon::before {
+  content: url(./assets/img/icons8-info.svg);
+}
+
+.imagen-circular {
+  border-radius: 50%; /* Aplica un radio de borde del 50% para hacer la imagen circular */
+  width: 30px; /* Establece el ancho deseado para la imagen */
+  height: 30px; /* Establece la altura deseada para la imagen */
+}
+
+.imagen-estilo{
+  text-align: center;
+  padding: 15px 0 15px 0;
+}
+
+
+.progress-container {
+  width: 100%;
+  background-color: #ddd;
+  height: 6px;
+  position: relative;
+  border-radius: 10px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #9c9c9c; /* Color de fondo de la barra de progreso */
+  transition: width 0.5s; /* Transición suave para la animación */
+}
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  width: 35%;
+}
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #e5e5e5;
+  padding: 10px 0;
+  margin-top: 20px;
+}

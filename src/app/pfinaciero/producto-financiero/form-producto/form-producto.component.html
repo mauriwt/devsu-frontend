@@ -1,0 +1,81 @@
+
+<div class="register-form contenedorFondo" >
+  <br>
+  <h1 style="text-align: center;">Formulario de Registo</h1>
+  <hr>
+  <form [formGroup]="frmProducto" (ngSubmit)="guardarRegistro()">
+    <table>
+      <tr>
+        <td>
+          <div class="form-group">
+            <label for="campoid">ID:</label>
+            <input #IdField type="text" class="form-control" id="campoid" formControlName="id" (change)="verificarId(IdField.value)"
+              [ngClass]="fieldCss(frmProducto,'id')" required>
+            <div class="invalid-feedback" *ngIf="isFieldValid(frmProducto,'id')">
+              <div>{{frmErrorProducto.id}}</div>
+              <span *ngIf="frmProducto.get('id')?.errors?.['notUnique']">ID no válido!</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="camponame">Nombre:</label>
+            <input type="text" class="form-control" id="camponame" formControlName="name" placeholder=""
+              [ngClass]="fieldCss(frmProducto,'name')" required>
+            <div class="invalid-feedback" *ngIf="isFieldValid(frmProducto,'name')">
+              <div>{{frmErrorProducto.name}}</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+            <label for="description">Descripción:</label>
+            <input type="text" class="form-control" id="description" formControlName="description" placeholder=""
+              [ngClass]="fieldCss(frmProducto,'description')" required>
+            <div class="invalid-feedback" *ngIf="isFieldValid(frmProducto,'description')">
+              <div>{{frmErrorProducto.description}}</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="logo">Logo:</label>
+            <input type="text" class="form-control" id="logo" formControlName="logo" placeholder=""
+              [ngClass]="fieldCss(frmProducto,'logo')" required>
+            <div class="invalid-feedback" *ngIf="isFieldValid(frmProducto,'logo')">
+              <div>{{frmErrorProducto.logo}}</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+            <label for="date_release">Fecha Liberación:</label>
+            <input #date_release type="date" class="form-control" id="date_release" formControlName="date_release" (change)="setFechaRevision(date_release.value)"
+              [ngClass]="fieldCss(frmProducto,'date_release')" required>
+            <div class="invalid-feedback" *ngIf="isFieldValid(frmProducto,'date_release')">
+              <div>{{frmErrorProducto.date_release}}</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="date_revision">Fecha Revisión:</label>
+            <input type="date" class="form-control" id="date_revision" formControlName="date_revision" placeholder=""
+              [ngClass]="fieldCss(frmProducto,'date_revision')">
+            <div class="invalid-feedback" *ngIf="isFieldValid(frmProducto,'date_revision')">
+              <div>{{frmErrorProducto.date_revision}}</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <div id="btnEnviar" class="form-group">
+      <div><button type="button" class="btn" (click)="onReset()">Reiniciar</button></div>
+      <div><button type="submit" class="btn customButton" [disabled]="frmProducto.invalid">Enviar</button></div>
+    </div>
+  </form>
+</div>

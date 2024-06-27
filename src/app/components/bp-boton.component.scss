@@ -1,0 +1,17 @@
+.buttonMenu {
+  border: none;
+  border-radius: 50% !important;
+  background: transparent;
+  transition: background .3s;
+
+  &:hover,
+  &:focus {
+      background: #bcbcc0;
+      border-color: #bcbcc0;
+  }
+
+  &:active {
+      top: .08em;
+  }
+
+}
